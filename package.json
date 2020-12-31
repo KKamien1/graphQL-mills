@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "apollo-datasource": "^0.7.2",
+    "apollo-datasource-rest": "^0.9.6",
     "apollo-server": "^2.19.1",
     "graphql": "^15.4.0",
     "lodash": "^4.17.20",

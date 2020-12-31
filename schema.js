@@ -17,6 +17,16 @@ type Query {
         ): [Session],
 
     sessionsById(id:ID): Session
+
+    speakers: [Speaker]
+    speakerById(id:ID): Speaker 
+}
+
+type Speaker {
+    id: ID!
+    bio: String
+    name: String
+    sessions: [Session]
 }
 
 type Session {
@@ -30,5 +40,8 @@ type Session {
     format: String
     track: String
     level: String
+
+    speakers: [Speaker]
 }
+
 `
