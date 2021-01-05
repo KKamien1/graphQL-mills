@@ -8,23 +8,24 @@ class SessionAPI extends DataSource {
         super()
     }
 
-    initialize(config) {
-
-    }
+    initialize(config) { }
 
     getSessions(args) {
-        console.log(sessions, args)
-
         return _.filter(sessions, args);
     }
-    getSessionById(id) {
-        
-        console.log(sessions)
-        
+    getSessionById(id) {        
         const session = _.filter(sessions, {id: parseInt(id)});
-        console.log('session', session, id)
-
         return session[0]
+    }
+    toggleFavoriteSession(id) {        
+        const session = _.filter(sessions, {id: parseInt(id)});
+        session[0].favourite = !session[0].favourite
+        return session[0]
+    }
+    addSession(session) {        
+        session.id = 12
+        sessions.push(session)
+        return session
     }
 }
 

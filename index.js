@@ -7,14 +7,11 @@ const dataSources = () => ({
     speakerAPI: new SpeakerAPI(),
 })
 
-const typeDefs = require('./schema.js');
+const typeDefs = require('./schema');
 const resolvers = require('./resolvers')
-
-
-
 
 const server = new ApolloServer({typeDefs, resolvers, dataSources});
 
-server.listen({port:3500}).then(({url}) => {
+server.listen({port:3555}).then(({url}) => {
     console.log(`graphQL running as ${url}`)
 })
