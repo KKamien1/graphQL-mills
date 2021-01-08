@@ -16,9 +16,17 @@ type Query {
         level: String
         ): [Session],
 
-    sessionsById(id:ID): Session
+    sessionsById(id:ID): SessionOrError
     speakers: [Speaker]
     speakerById(id:ID): Speaker 
+}
+
+union SessionOrError = Session | Error
+
+type Error {
+    code: String
+    message: String
+    token: String
 }
 
 type Mutation {

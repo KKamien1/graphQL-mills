@@ -15,6 +15,7 @@ class SessionAPI extends DataSource {
     }
     getSessionById(id) {        
         const session = _.filter(sessions, {id: parseInt(id)});
+        throw new Error('From Session by ID')
         return session[0]
     }
     toggleFavoriteSession(id) {        
